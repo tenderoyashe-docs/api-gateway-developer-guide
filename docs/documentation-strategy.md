@@ -37,7 +37,7 @@ In a real product, useful signals would include time to first successful call, s
 
 ## Next improvements
 
-- Run and record the full Docker verification matrix.
-- Add CI to validate the OpenAPI spec and link integrity.
+- ~~Add CI to validate the OpenAPI spec and links.~~ Added in 0.2.0.
+- Record results of the automated Docker verification in the [verification guide](verification.md).
 - Add examples for rate limiting and request tracing once tested.
 - Test the quickstart with someone unfamiliar with the repository.

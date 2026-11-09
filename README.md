@@ -1,10 +1,14 @@
 # API Gateway Developer Guide
 
+[![docs-ci](https://github.com/tenderoyashe-docs/api-gateway-developer-guide/actions/workflows/docs-ci.yml/badge.svg)](https://github.com/tenderoyashe-docs/api-gateway-developer-guide/actions/workflows/docs-ci.yml)
+
 **An independent, hands-on technical documentation project.**
 
-This sample documents a small Inventory API accessed through Kong Gateway. It includes an executable local demo, a developer quickstart, an OpenAPI contract, authentication guidance, troubleshooting, and a verification checklist.
+This sample documents a small Inventory API accessed through Kong Gateway. It includes an executable local demo, a developer quickstart, an OpenAPI contract, authentication guidance, troubleshooting, and a verification checklist. Automated CI checks the API contract, upstream unit tests, internal links, and full gateway smoke tests on each push.
 
 **Audience:** Developers integrating with an API gateway, technical support engineers, and documentation reviewers.
+
+**Rendered API reference (available after GitHub Pages is enabled):** [View the reference](https://tenderoyashe-docs.github.io/api-gateway-developer-guide/)
 
 ## Start here
 
@@ -57,13 +61,15 @@ The demo API key is intentionally public and valid **only for this local example
 | `sample-api/` | Minimal working upstream API (Python) |
 | `scripts/smoke-test.sh` | End-to-end expected-status checks through Kong |
 | `tests/test_server.py` | Local unit tests for the upstream API |
+| `site/index.html` | Rendered API reference page (Redoc), published through GitHub Pages |
+| `.github/workflows/` | Documentation CI and API reference publishing |
 | `CHANGELOG.md` | Project maintenance notes |
 
 ## Validation status
 
 - The Python upstream can be tested without Docker using `python -m unittest discover -s tests -v`.
-- The complete gateway setup requires Docker Compose; follow the [verification guide](docs/verification.md) and record results before describing the gateway integration as tested.
-- All response examples are illustrative until confirmed against a running environment.
+- The `docs-ci` workflow validates the OpenAPI contract, runs unit tests, checks links, and attempts gateway smoke tests. The badge shows the latest run.
+- Verification results and environment versions are documented in the [verification guide](docs/verification.md). Results remain pending until a successful run is observed.
 
 ## About the work
 

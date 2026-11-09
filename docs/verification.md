@@ -14,7 +14,7 @@ The unit tests exercise `GET /health`, `GET /items`, valid item creation, and in
 
 ## Gateway smoke checks
 
-With Docker running:
+These checks run in the `docs-ci` GitHub Actions workflow on every push. To run them locally, with Docker running:
 
 ```bash
 docker compose up -d --build
@@ -27,10 +27,13 @@ bash scripts/smoke-test.sh
 | GET without API key | 401 | Not yet recorded |
 | GET with invalid API key | 401 | Not yet recorded |
 | POST valid item | 201 | Not yet recorded |
+| POST without `name` | 400 | Not yet recorded |
 | Unknown upstream endpoint | 404 | Not yet recorded |
 | Authenticated health check | 200 | Not yet recorded |
 
-After running the tests, replace each `Not yet recorded` with the observed result and note the date and Docker/Kong versions.
+**Run details:** Not yet recorded.
+
+After the first successful `docs-ci` run, replace each `Not yet recorded` with the observed result and record the workflow run link, date, Docker and Kong versions.
 
 ## Review checklist
 
