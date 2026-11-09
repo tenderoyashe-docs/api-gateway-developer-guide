@@ -23,17 +23,17 @@ bash scripts/smoke-test.sh
 
 | Test | Expected | Observed |
 | --- | --- | --- |
-| Authenticated GET `/inventory/items` | 200 | Not yet recorded |
-| GET without API key | 401 | Not yet recorded |
-| GET with invalid API key | 401 | Not yet recorded |
-| POST valid item | 201 | Not yet recorded |
-| POST without `name` | 400 | Not yet recorded |
-| Unknown upstream endpoint | 404 | Not yet recorded |
-| Authenticated health check | 200 | Not yet recorded |
+| Authenticated GET `/inventory/items` | 200 | 200 — PASS |
+| GET without API key | 401 | 401 — PASS |
+| GET with invalid API key | 401 | 401 — PASS |
+| POST valid item | 201 | 201 — PASS |
+| POST without `name` | 400 | 400 — PASS |
+| Unknown upstream endpoint | 404 | 404 — PASS |
+| Authenticated health check | 200 | 200 — PASS |
 
-**Run details:** Not yet recorded.
+**Run details:** 9 November 2026, [GitHub Actions docs-ci run #42709452481](https://github.com/tenderoyashe-docs/api-gateway-developer-guide/actions/runs/42709452481), Kong 3.9.4, Docker 29.4.2, Docker Compose 5.1.3. Both the validation and gateway smoke-test jobs passed.
 
-After the first successful `docs-ci` run, replace each `Not yet recorded` with the observed result and record the workflow run link, date, Docker and Kong versions.
+These are observed results from the linked GitHub Actions run. Check future CI runs after changing the application, gateway configuration or documentation.
 
 ## Review checklist
 
